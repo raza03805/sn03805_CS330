@@ -1,0 +1,15 @@
+#compiling design modules
+vlog Ex_testbench.v Ex_ripple_carry_counter.v Ex_T_FF.v Ex_D_FF.v
+
+#no optimization
+vsim -novopt work.tb
+
+#view waves
+view waves
+
+#adding waves
+add wave sim:/tb/clk
+add wave sim:/tb/reset
+add wave sim:/tb/q
+
+run 450ns
