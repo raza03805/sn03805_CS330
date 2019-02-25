@@ -1,0 +1,13 @@
+vlog testb.v alu_64_Bit.v
+vsim -novopt work.testb
+view wave
+add wave sim:/testb/a
+add wave sim:/testb/b
+add wave sim:/testb/ainvert
+add wave sim:/testb/binvert
+add wave sim:/testb/carryin
+add wave sim:/testb/operation
+add wave sim:/testb/result
+add wave sim:/testb/carryout
+
+run 250ns
