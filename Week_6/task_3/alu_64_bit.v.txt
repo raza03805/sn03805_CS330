@@ -1,0 +1,41 @@
+module ALU_64_Bit 
+(
+input [63:0] a,
+input [63:0] b, 
+input ainvert, 
+input binvert, 
+input carryIn, 
+input [1:0] operation, 
+output reg [64:0] result, 
+output reg carryout 
+); 
+
+wire [64:0] an; 
+wire [64:0] bn; 
+wire [64:0] cn; 
+wire [64:0] finalresult;
+
+assign an = aInvert ? {{1'b1},~a} : {{1'b0},a};
+assign bn = bInvert ? {{1'b1},~b} : {{1'b0},b};
+assign cn = {{64{1'b0}},cn};
+
+always @* 
+if (operation == 2'b01) 
+begin 
+result = an|bn; 
+carryout = 1'b0; 
+end 
+else if (operation == 2'b00) 
+begin 
+result = an&bn; 
+carryout = 1'b0; 
+end 
+else if (operation == 2'b10) 
+begin 
+finalresult = an+bn+cn; 
+result = finalresult; 
+carryout = result[64]; 
+end 
+      
+endmodule 
+
