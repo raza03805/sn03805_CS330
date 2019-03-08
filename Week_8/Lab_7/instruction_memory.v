@@ -26,7 +26,7 @@ instruc_memory[15] = 8'b00001110;
 end
 
 always@(Inst_Address)
-Instruction = {instruc_memory[Inst_Address+3],instruc_memory[Inst_Address+2],instruc_memory[Inst_Address+1],instruc_memory[Inst_Address]};
+Instruction = {instruc_memory[Inst_Address[3:0]+3],instruc_memory[Inst_Address[3:0]+2],instruc_memory[Inst_Address[3:0]+1],instruc_memory[Inst_Address[3:0]]};
 
 
 endmodule
