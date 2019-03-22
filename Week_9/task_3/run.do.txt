@@ -1,0 +1,8 @@
+vlog tb.v top_control.v ALU_Control.v Control_Unit.v
+vsim -novopt work.tb
+view wave
+add wave sim:/tb/Opcode
+add wave sim:/tb/funct
+add wave sim:/tb/Operation
+
+run 250ns
