@@ -1,0 +1,37 @@
+vlog tb.v RISC_V_Processor.v registerFile.v PC.v multiplexer.v Instruction_parser.v instruction_memory.v Data_Memory.v Control_Unit.v ALU_Control.v Add.v Alu_64_bit.v immediate_data_extractor.v 
+
+vsim -novopt work.tb
+
+view wave
+add wave sim:/tb/clk
+add wave sim:/tb/reset
+add wave sim:/tb/myRISC_V_Processor/PC_In
+add wave sim:/tb/myRISC_V_Processor/PC_Out
+add wave sim:/tb/myRISC_V_Processor/b
+add wave sim:/tb/myRISC_V_Processor/out
+add wave sim:/tb/myRISC_V_Processor/out2
+add wave sim:/tb/myRISC_V_Processor/instruction
+add wave sim:/tb/myRISC_V_Processor/opcode
+add wave sim:/tb/myRISC_V_Processor/rd
+add wave sim:/tb/myRISC_V_Processor/funct3
+add wave sim:/tb/myRISC_V_Processor/rs1 
+add wave sim:/tb/myRISC_V_Processor/rs2
+add wave sim:/tb/myRISC_V_Processor/funct7
+add wave sim:/tb/myRISC_V_Processor/Branch
+add wave sim:/tb/myRISC_V_Processor/MemRead
+add wave sim:/tb/myRISC_V_Processor/MemtoReg
+add wave sim:/tb/myRISC_V_Processor/ALUOp
+add wave sim:/tb/myRISC_V_Processor/MemWrite
+add wave sim:/tb/myRISC_V_Processor/ALUSrc
+add wave sim:/tb/myRISC_V_Processor/RegWrite
+add wave sim:/tb/myRISC_V_Processor/WriteData
+add wave sim:/tb/myRISC_V_Processor/ReadData1
+add wave sim:/tb/myRISC_V_Processor/ReadData2
+add wave sim:/tb/myRISC_V_Processor/imm_data
+add wave sim:/tb/myRISC_V_Processor/Operation
+add wave sim:/tb/myRISC_V_Processor/data_out
+add wave sim:/tb/myRISC_V_Processor/Result
+add wave sim:/tb/myRISC_V_Processor/zero
+add wave sim:/tb/myRISC_V_Processor/Read_Data 
+
+run 2000ns
